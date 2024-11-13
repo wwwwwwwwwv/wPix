@@ -1,0 +1,180 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+}
+
+header {
+  background-color: #006F48; /* Green header */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width:100% ;
+  height: 20vh;
+  border-radius: 10px;
+
+}
+
+.hom{
+  width: 100%;
+  padding: 10px 100px;
+
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #35D59D; /* Darker green on hover */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 20px;
+
+}
+
+.image-container {
+  position: relative;
+  cursor: pointer;
+ 
+
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  border: 1px solid #60D5AC; /* Add transition for smooth scaling */
+}
+
+.image-container:hover img {
+  transform: scale(1.1); /* Zoom in on hover */
+}
+
+.image-overlay {
+  /* ... (previous CSS) ... */
+  display: none; /* Hide overlay by default */
+}
+
+.image-container:hover .image-overlay {
+  display: block; /* Show overlay on hover */
+  opacity: 1;
+}
+
+.modal {
+  display: none; 
+  position: fixed; 
+
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%; 
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+#modal-img {
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 20px; 
+  border-radius: 5px; 
+}
+
+#download-link {
+  display: block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#download-link:hover {
+  background-color: #45a049;
+}
+
+
+@media (max-width: 768px) { /* Media query for mobile devices */
+  header {
+    height: auto; /* Auto height for header */
+  }
+
+  nav {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Center items vertically */
+  }
+
+  nav a {
+    margin: 5px 0; /* Add margin between links */
+  }
+
+  .gallery {
+    grid-template-columns: 1fr; /* One column for mobile */
+  }
+
+  .modal-content {
+    width: 90%; /* Adjust modal width for mobile */
+  }
+}
